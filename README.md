@@ -5,20 +5,22 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version = 3.0.0
 
 * System dependencies
+    Have these gem's installed - Tailwind, Foreman, Devise, Redis
 
 * Configuration
-
-* Database creation
+    Make sure you have Redis running in background, if not - It can be initialized using this command:-
+    redis-server --daemonize yes
+    In order to check that is it running - ps aux | grep redis-server
 
 * Database initialization
+    Before making any moves, configure the database.yml in config folder with your postgres user and password in default.
 
-* How to run the test suite
+* Database creation
+    Run rails db:create && rails db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run
+    You can initialize the application with bin/dev instead of normal 'rails server'
+    *bin/dev is foreman's command, and it builds Tailwind on-the-go.
