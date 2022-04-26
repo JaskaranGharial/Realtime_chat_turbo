@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :messages
   end
-  resources :rooms
+  post '/rooms/:user_id', to: 'rooms#create'
   post 'rooms', to: 'rooms#index', as: "create_room"
   devise_for :users
   root "pages#home"
