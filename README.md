@@ -6,6 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version = 3.0.0
+* Rails Version = 7.2.3
 
 * System dependencies
     Have these gem's installed - Tailwind, Foreman, Devise, Redis
