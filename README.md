@@ -13,7 +13,7 @@ Things you may want to cover:
 
 * Configuration - 
     Make sure you have Redis running in background, if not - It can be initialized using this command:-
-    redis-server --daemonize yes
+    redis-server --daemonize yes, 
     In order to check that is it running - ps aux | grep redis-server
 
 * Database initialization - 
@@ -23,5 +23,5 @@ Things you may want to cover:
     Run rails db:create && rails db:migrate
 
 * How to run - 
-    You can initialize the application with bin/dev instead of normal 'rails server'
+    You can initialize the application with bin/dev instead of normal 'rails server', 
     *bin/dev is foreman's command, and it builds Tailwind on-the-go.
