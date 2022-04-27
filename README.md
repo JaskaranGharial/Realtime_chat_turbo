@@ -9,7 +9,7 @@ Things you may want to cover:
 * Rails Version = 7.2.3
 
 * System dependencies - 
-    Have these gem's installed - Tailwind, Foreman, Devise, Redis
+    Have these gem's installed - Tailwind, Foreman, Devise, Redis, image_processing mini_magick
 
 * Configuration - 
     Make sure you have Redis running in background, if not - It can be initialized using this command:-

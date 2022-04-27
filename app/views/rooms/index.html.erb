@@ -1,11 +1,12 @@
  <div id="side_panel" class="md-4 sm-4">
-    <h1>Welcome,<p><%= current_user.email %></p></h1>
-    <h4><b>Users</b></h4>
+    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-black">Welcome</h1>
+    <p class="font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600"><%= current_user.name || current_user.email %></p>
+    <h4 class="font-medium leading-tight text-2xl mt-0 mb-2 text-black-600"><b>Users</b></h4>
     <%= turbo_stream_from "users" %>
     <div id="users">
       <%= render @users %>
     </div>
-    <h4><b>Rooms</b></h4>
+    <h4 class="font-medium leading-tight text-2xl mt-0 mb-2 text-black-600"><b>Rooms</b></h4>
     <%= turbo_stream_from "rooms" %>
     <%= render 'layouts/new_room_form' %>
     <div id="rooms">

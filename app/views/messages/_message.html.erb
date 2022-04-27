@@ -1,8 +1,11 @@
 <div class="cont-<%=message.user.id%>">
     <div class="message-box backdrop-blur-sm text-white msg-<%= message.user.id %>">
-        <% unless message.room.is_private %>
-            <h6 class="name"><%= message.user.email %></h6>
-        <% end %>
+        <div class="flex 1", style="align-items:center;">
+        <div>
+            <h6 class="name font-medium"><%= message.user.name || message.user.email %></h6>
+            <p class="time"><%= time_ago_in_words(message.created_at) %> ago</p>
+        </div>
+        </div>
         <%= message.body %>
     </div>
 </div>
