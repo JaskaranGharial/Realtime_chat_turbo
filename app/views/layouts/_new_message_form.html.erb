@@ -1,6 +1,14 @@
 <div class="form-group msg-form">
   <%= form_with(model: [@single_room, @message], remote: true, class:'flex-1 contents', data: {controller: "reset-form", action: "turbo:submit-end->reset-form#reset"}) do |f| %>
-    <%= f.text_field :body, id: 'chat-text', class: 'form-control msg-content text-black', autocomplete: 'off' %>
-    <%= f.submit data: {disable_with: false}, class: "inline-block px-6 py-2.5 bg-red-50 text-red-600 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-600 active:shadow-lg transition duration-180 ease-in-out" %>
-  </div>
-<% end %>
+    <div id="attachment-preview" data-controller="message-preview" data-action="message-preview#preview">
+    </div>
+      <div class="image-upload">
+        <label for="message_attachments">
+          <i class="bi bi-plus-circle upload-button"></i>
+        </label>
+        <%= f.file_field(:attachments, multiple: true, data:{controller: "message-preview", action: "change->message-preview#preview"}) %>
+        <%= f.text_field :body, id:'chat_text', class:'form-control msg-content', autocomplete: 'off' %>
+        <%= f.submit data: {disable_with: false, controller:'message-preview', action:'click->message-preview#clearPreviews'}, class: "inline-block px-6 py-2.5 bg-red-50 text-red-600 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-500 hover:text-white hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-600 active:shadow-lg transition duration-180 ease-in-out" %>
+      </div>
+  <% end %>
+</div>

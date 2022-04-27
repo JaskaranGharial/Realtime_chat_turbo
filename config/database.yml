@@ -84,5 +84,5 @@ test:
 #
 production:
   <<: *default
-  database: turbochat_production
+  database: turbochat_development
   
